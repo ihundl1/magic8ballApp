@@ -30,12 +30,18 @@ export class HomePage {
     const toast = this.toastCtrl.create({
       message: answer,
       duration: 5000,
-      position: 'bottom'
+      position: 'top'
       //showCloseButton: true
     });
     toast.onDidDismiss(() => {
       this.cssClass = "";
     });
     toast.present();
+  }
+
+  gotoAbout(){
+    this.navCtrl.push('AboutPage', {
+      message: "This is a message from the HomePage"
+    });
   }
 }
