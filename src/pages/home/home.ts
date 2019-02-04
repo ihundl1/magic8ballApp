@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+// import platform with NavController
+import { NavController, Platform } from 'ionic-angular';
 import {ToastController} from 'ionic-angular';
+// importing ScreenOrientation
+import { ScreenOrientation } from '@ionic-native/screen-orientation';
 
 @Component({
   selector: 'page-home',
@@ -15,8 +18,19 @@ export class HomePage {
              'Better not tell you now.', 'Cannot predict now.',
              'Concentrate and ask again.', "Don't count on it.", 'My reply is no.',
              'My sources say no.', 'Outlook not so good.', 'Very doubtful.']
-  constructor(public navCtrl: NavController, private toastCtrl: ToastController) {
+  constructor(public navCtrl: NavController,
+              private toastCtrl: ToastController,
+              // declare ScreenOrientation and platform
+              private screenOrientation: ScreenOrientation,
+              private platform: Platform) {
 
+  }
+
+  ionViewDidLoad(){
+    // if you are on a mobile device, lock the screen
+    if (this.platform.is('cordova')){
+      this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
+    }
   }
 
   giveAnswer(){
