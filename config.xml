@@ -2,7 +2,7 @@
 <widget id="com.bella.magic8Ball" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Magic8Ball</name>
     <description>Shake Shake Shake</description>
-    <author email="isabella.n.hundley@gmail.com" href="https://github.com/ihundl1">Isabella Hundley</author>
+    <author email="isabella.n.hundley@gmail.com" href="https://github.com/ihundl1">TrueRipple</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
